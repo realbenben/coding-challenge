@@ -60,3 +60,57 @@ Elle fonctionne de la même manière que la fonction précédente. La différenc
 Donc ici, pas besoin de boucle.
 
 #############################################################################################################################################################################
+l existe un moyen beaucoup plus flexible que les méthodes précédentes pour sélectionner un élément HTML dans le DOM :
+
+.querySelector()
+
+Cette fonction sélectionne un élément en utilisant les sélecteurs css. De ce fait les possibilités sont nombreuses. Il suffit de préciser en paramètres de la fonction un sélecteur css comme vous l'écririez dans un fichier .css
+
+Exemple :
+
+document.querySelector("div > p");
+
+Ici, on sélectionne tous les p qui sont des enfants directs d'un div. Attention, cette fonction ne récupère que le premier élément HTML correspondant. Pas besoin de boucle ici pour parcourir le résultat.
+
+Pour récupérer une liste de plusieurs éléments HTML toujours en utilisant les sélecteurs css, il faut utiliser la fonction .querySelectorAll().
+
+Cette fonction récupère aussi une liste (ou collection) d'éléments (comme getElementsByTagName() et getElementsByClassName()). Il faut donc une boucle pour parcourir les résultats.
+########################################################################################################################################################################
+
+Il est possible de récupérer ou de modifier le contenu d'un élément HTML avec la propriété innerHTML.
+
+Récupérer le contenu HTML
+
+var contenu = element.innerHTML;
+
+Modifier le contenu HTML
+
+element.innerHTML = "Nouveau contenu HTML (texte + balises)";
+
+ex
+var div = document.querySelector('div > p');
+div.innerHTML = "Dernier paragraphe";
+########################################################################################################################################################################
+Il est possible de modifier un attribut d'un élément HTML.
+
+Modifier l'attribut d'un élément HTML
+
+element.attribute = "Nouvelle valeur";
+
+Ici attribute est à remplacer par le nom de l'attribut en question.
+
+Exemple :
+
+element.src = "monimage.png"
+
+Ici on récupère un élément HTML (une image) et on change le lien vers le fichier en question.
+
+########################################################################################################################################################################
+
+Il est aussi possible d'ajouter un attribut à un élément HTML avec la fonction .setAttribute().
+
+Exemple :
+
+element.setAttribute("class", "democlass");
+
+Ici on récupère un élément HTML et on ajoute une class css appelée democlass.
